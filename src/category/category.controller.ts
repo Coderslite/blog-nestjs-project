@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
@@ -14,7 +14,7 @@ export class CategoryController {
   }
 
   @Get()
-  findAll(@query() query:CategoriesQueryDto) {
+  findAll(@Query() query:CategoriesQueryDto) {
     return this.categoryService.findAll(query);
   }
 
